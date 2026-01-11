@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IlayDev | Contact</title>
+
+  <style>
+    :root {
+      --black: #0b0b0f;
+      --purple: #7b2cff;
+      --pink: #ff4fd8;
+      --text: #ffffff;
+      --bg: linear-gradient(135deg, #0b0b0f, #1a0026);
+      --card: rgba(255,255,255,0.06);
+    }
+
+    body.light {
+      --black: #ffffff;
+      --text: #111;
+      --bg: linear-gradient(135deg, #fff0fa, #f4e6ff);
+      --card: rgba(0,0,0,0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', Arial, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    header {
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(8px);
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      background: linear-gradient(45deg, var(--pink), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+
+    /* CONTENT */
+    main {
+      padding: 120px 20px 60px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      background: linear-gradient(45deg, var(--pink), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 25px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(255,79,216,0.25);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: var(--pink);
+    }
+
+    .card p {
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      opacity: 0.7;
+    }
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--pink);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">IlayDev</div>
+    <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+   <div class="nav-links" id="navLinks">
+<a href="index.html">עמוד הבית</a>
+   </div>
+    
+  </nav>
+</header>
+
+<main>
+  
+  <h1>יצירת קשר & פרטים</h1>
+
+  <div class="cards">
+    <div class="card">
+      <h3>מייל📧</h3>
+      <p>ilaydevlevin@gmail.com</p>
+    </div>
+
+    <div class="card">
+       <h3>אינסטגרם📞</h3>
+     <a href="https://www.instagram.com/ilaydevlevin/">עמוד אינסטגרם</a>
+    </div>
+
+    <div class="card">
+      <h3>שעות עבודה ⏰</h3>
+      <p>ניתן לשלוח הודעה כל זמן בשבוע (מומלץ לא בחגים ובשבת)</p>
+    </div>
+
+    <div class="card">
+      <h3>מיקום📍</h3>
+      <p>ישראל<br>שירות אונליין לכל ישראל (עברית ואנגלית)</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  © 2026 IlayDev
+</footer>
+
+<script>
+  function toggleTheme() {
+    document.body.classList.toggle('light');
+    const isLight = document.body.classList.contains('light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    document.querySelector('.theme-toggle').textContent = isLight ? '☀️' : '🌙';
+  }
+
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    document.body.classList.add('light');
+    document.querySelector('.theme-toggle').textContent = '☀️';
+  }
+</script>
+
+</body>
+</html>
