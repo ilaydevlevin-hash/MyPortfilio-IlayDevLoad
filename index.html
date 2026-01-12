@@ -221,7 +221,50 @@
   <h2>לגביי</h2>
   <p>אני מתמחה בבניית אתרים רספונסיביים באמצעות HTML, CSS ו-JavaScript, תוך התמקדות בעיצוב נקי וחוויית משתמש מעולה.</p>
 </section>
+<section id="faq" style="padding:80px 20px; max-width:1100px; margin:auto;">
+  <h2 style="
+    font-size:2rem; 
+    margin-bottom:30px;
+    background: linear-gradient(45deg, #ff4fd8, #7b2cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  ">FAQ - שאלות נפוצות</h2>
 
+  <div class="faq-item" style="margin-bottom:15px; cursor:pointer; padding:15px; background:rgba(255,255,255,0.05); border-radius:15px;">
+    <h3 style="margin:0;">1. כמה זמן לוקח לבנות אתר?</h3>
+    <p style="margin-top:10px; display:none;">תלוי בגודל האתר בדרך כלל לאתר תדמית פחות משבוע, ואתר אונליין בין שבוע-2</p>
+  </div>
+
+  <div class="faq-item" style="margin-bottom:15px; cursor:pointer; padding:15px; background:rgba(255,255,255,0.05); border-radius:15px;">
+    <h3 style="margin:0;">2. האם האתר מותאם למובייל?</h3>
+    <p style="margin-top:10px; display:none;">כן! כל האתרים שאני בונה מותאמים למובייל וטאבלט.</p>
+  </div>
+
+  <div class="faq-item" style="margin-bottom:15px; cursor:pointer; padding:15px; background:rgba(255,255,255,0.05); border-radius:15px;">
+    <h3 style="margin:0;">3. האם אתם מספקים תמיכה אחרי הבנייה?</h3>
+    <p style="margin-top:10px; display:none;">כן, אני מספק תמיכה והדרכה לשימוש באתר לאחר מסירתו.</p>
+  </div>
+
+  <div class="faq-item" style="margin-bottom:15px; cursor:pointer; padding:15px; background:rgba(255,255,255,0.05); border-radius:15px;">
+    <h3 style="margin:0;">4. מה כוללת החבילה הבסיסית?</h3>
+    <p style="margin-top:10px; display:none;">חבילת הבסיס כוללת דף בית, עמודים פנימיים, התאמה למובייל, חיבור ל־contact form ועיצוב מודרני.</p>
+  </div>
+
+  <div class="faq-item" style="margin-bottom:15px; cursor:pointer; padding:15px; background:rgba(255,255,255,0.05); border-radius:15px;">
+    <h3 style="margin:0;">5. האם אתם מספקים דומיין ואחסון?</h3>
+    <p style="margin-top:10px; display:none;">כן, אפשר להוסיף שירות דומיין ואחסון בתוספת עלות, או להשתמש בדומיין קיים.</p>
+  </div>
+</section>
+
+<script>
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const p = item.querySelector('p');
+      p.style.display = p.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+</script>
 <section id="projects">
   <h2>פרויקטים</h2>
   <div class="projects">
